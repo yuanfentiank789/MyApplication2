@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.apple.view.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.apple.myapplication.LaunchModeTestActivity">
+
+    <TextView
+        android:id="@+id/actname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="activityinfo:"
+        android:textColor="#ff0000"
+        android:textSize="30dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="activityinfo:" />
+
+    <TextView
+        android:id="@+id/infotv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:textColor="#00ff00" />
+
+    <Button
+        android:id="@+id/doAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doAction"
+        android:text="singletop" />
+
+    <Button
+        android:id="@+id/doAction2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doAction2" />
+
+    <Button
+        android:id="@+id/doAction3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doAction3" />
+
+    <Button
+        android:id="@+id/doAction4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doAction4" />
+
+
+</com.example.apple.view.MyLinearLayout>

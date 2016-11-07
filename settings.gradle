@@ -1,0 +1,2 @@
+//include ':app', ':launchmode', ':javalib', ':CallYou', ':Android6.0', ':LbsSample'
+include ':app',':launchmode'

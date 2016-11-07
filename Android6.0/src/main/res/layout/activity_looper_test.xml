@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="ndk.com.example.apple.myapplication.LooperTestAct">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="looper"
+        android:background="#00ff00"
+        android:onClick="startThread"
+        android:gravity="center"/>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="handlerThread"
+        android:background="#00ff00"
+        android:onClick="startHandlerThread"
+        android:gravity="center"/>
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="allocationtrack"
+        android:onClick="allocationtrack"
+        android:gravity="center"/>
+
+</LinearLayout>
