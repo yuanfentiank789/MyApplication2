@@ -1,14 +1,9 @@
 package com.example.apple.launchmode;
 
-import android.app.ActivityManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
-
-import java.util.List;
 
 import model.HomeListener;
 
@@ -22,7 +17,6 @@ public class ActivityA extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        registerHomeListener();
     }
 
     public void doAction(View v) {
@@ -53,27 +47,6 @@ public class ActivityA extends BaseActivity {
 
     HomeListener mHomeWatcher;
 
-    /**
-     * 注册Home键的监听
-     */
-    private void registerHomeListener() {
-        mHomeWatcher = new HomeListener(this);
-        mHomeWatcher.setOnHomePressedListener(new HomeListener.OnHomePressedListener() {
-
-            @Override
-            public void onHomePressed() {
-                //TODO 进行点击Home键的处理
-                Toast.makeText(ActivityA.this, "short press", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onHomeLongPressed() {
-                //TODO 进行长按Home键的处理
-                Toast.makeText(ActivityA.this, "long press", Toast.LENGTH_SHORT).show();
-            }
-        });
-        mHomeWatcher.startWatch();
-    }
 
     @Override
     protected void onDestroy() {
@@ -84,34 +57,6 @@ public class ActivityA extends BaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        mHadnler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Toast.makeText(ActivityA.this, "" + isAppOnForeground(), Toast.LENGTH_SHORT).show();
-
-            }
-        }, 10);
     }
 
-    public boolean isAppOnForeground() {
-        // Returns a list of application processes that are running on the
-        // device
-
-        ActivityManager activityManager = (ActivityManager) getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE);
-        String packageName = getApplicationContext().getPackageName();
-
-        List<ActivityManager.RunningAppProcessInfo> appProcesses = activityManager
-                .getRunningAppProcesses();
-        if (appProcesses == null)
-            return false;
-
-        for (ActivityManager.RunningAppProcessInfo appProcess : appProcesses) {
-            // The name of the process that this object is associated with.
-            if (appProcess.processName.equals(packageName)
-                    && appProcess.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
-                return true;
-            }
-        }
-        return false;
-    }
 }
