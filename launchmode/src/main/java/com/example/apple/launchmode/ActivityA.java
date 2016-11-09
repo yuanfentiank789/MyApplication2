@@ -59,4 +59,5 @@ public class ActivityA extends BaseActivity {
         super.onPause();
     }
 
+
 }
